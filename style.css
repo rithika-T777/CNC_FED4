@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgba(245, 245, 245, 0.774);
+  background-color: gradient(to right, green,blue);
   color: #333;
   font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
