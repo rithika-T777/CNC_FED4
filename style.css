@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: linear-gradient(to right,blue,green);
+  background: linear-gradient(to right,blue,green);
   color: #333;
   font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
