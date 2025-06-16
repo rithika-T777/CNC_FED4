@@ -1,70 +1,146 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    background-color:rgba(245, 245, 245, 0.774);
-    color: #333; 
-    
-}
-.header{
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 10px;
-}
-.searchbar{
-    margin-top: 10px;
-}
-.searchbar input{
-    width: 350px;
-    font-size: 18px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 
+body {
+  background-color: rgba(245, 245, 245, 0.774);
+  color: #333;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
-span{
-    margin-top: 10px;
-    cursor: pointer;
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
-.btn button{
-    margin-top: 50px;
-    padding:  10px  10px;
-    border: 1px solid #333;
-    border-radius: 20px;
-    cursor: pointer;
+
+/* Search bar */
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.btn button:hover{
-    background-color: #333;
-    color: aliceblue;
+
+.searchbar input {
+  width: 300px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
 }
+
+/* Pseudo-class: input focus */
+.searchbar input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px #999;
+}
+
+/* icon */
+span i {
+  margin-left: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/*Pseudo-class: icon hover */
+span i:hover {
+  transform: scale(1.2);
+  color: #ff6f61;
+}
+
+/* Button section */
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.btn button {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn button:hover {
+  background-color: #333;
+  color: aliceblue;
+}
+
+/* Section heading */
 .details {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    text-align: left;
-    padding-left: 10px;
-    margin-top: 20px;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 10px;
+  margin-top: 30px;
 }
-.gallery{
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 20px;
-    gap:5px
-    
-}
-.gallery .grid{
-    margin-top: 5px;
-}
-.gallery .grid img{
-    width: 100%;
-    height: auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 
+/* Grid layout*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  width: 400px;
+  height:500px;
+  gap: 10px;
+  padding: 10px;
+}
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+.gallery .grid {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+/*object-fitto*/
+.gallery .grid img {
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Pseudo-class: hover effect */
+.gallery .grid:hover img {
+  transform: scale(1.05);
+}
+
+/* Optional: Style every odd image slightly different */
+.gallery .grid:nth-child(odd) img {
+  border: 2px solid #ff6f61;
+}
+/* Overlay caption styling */
+.gallery .grid .caption {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  padding: 8px 10px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+/* Show caption on hover */
+.gallery .grid:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
 }
