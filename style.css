@@ -5,8 +5,8 @@
 }
 
 body {
-  background: linear-gradient(to right,blue,green);
-  color: #333;
+  background: linear-gradient(145deg,#3a1c71, #681448, #d76d77,#ffaf7b);
+  color:#fafafa;
   font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
 }
 
@@ -53,7 +53,7 @@ span i {
 /*Pseudo-class: icon hover */
 span i:hover {
   transform: scale(1.2);
-  color: #ff6f61;
+  color: #e6e3e3;
 }
 
 /* Button section */
@@ -66,15 +66,15 @@ span i:hover {
 
 .btn button {
   padding: 10px 20px;
-  border: 1px solid #333;
+  border: 1px solid #fafafa;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .btn button:hover {
-  background-color: #333;
-  color: aliceblue;
+  background-color: #d2d2d2;
+  color:rgb(11, 11, 61);
 }
 
 /* Section heading */
